@@ -87,6 +87,7 @@ gulp.task('browserSync', function() {
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync','copy', 'minify-css', 'minify-js'], function() {
+	gulp.watch(['src/*html', 'src/img/*', 'vendor/*'], ['copy']);
     //compile and minifies css and js
     gulp.watch(['src/*.html','src/img/*/','vendor/*/'],['copy']);
     gulp.watch('src/style/*.scss', ['minify-css']);
